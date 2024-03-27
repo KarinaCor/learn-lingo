@@ -1,10 +1,14 @@
 import { Route, Routes } from 'react-router-dom';
 import SharedLayout from 'components/SharedLayout/SharedLayout';
-import FirstPage from 'pages/FirstPage/FirstPage';
-import SecondPage from 'pages/SecondPage/SecondPage';
-import HalfPage from 'pages/HalfPage/HalfPage';
+
+
+
 import ErrorPage from 'pages/ErrorPage/ErrorPage';
 import { AppWrapper } from './App.styled';
+import HomePage from './pages/HomePage/HomePage';
+import TeachersPage from './pages/TeachersPage/TeachersPage';
+
+
 
 const test = import.meta.env.VITE_API_TEST;
 
@@ -14,9 +18,9 @@ function App() {
     <AppWrapper>
       <Routes>
         <Route path="/" element={<SharedLayout />}>
-          <Route path="/first" element={<FirstPage />} />
-          <Route path="/second" element={<SecondPage />}>
-            <Route path=":half" element={<HalfPage />} />
+          <Route path="/first" element={<HomePage />} />
+          <Route path="/second" element={<TeachersPage />}>
+         
           </Route>
           <Route path="*" element={<ErrorPage />} />
         </Route>
